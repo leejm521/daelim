@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>대림건설</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        img{border:none; vertical-align: none;}
+        a{text-decoration: none; color:#000000;}
+        ul{list-style: none;}
+        .clearFix:after{
+            content: "";
+            display: block;
+            clear:both;
+        }
+        #header{
+            width: 100%; height: 70px;
+            background-color: white;
+        }
+        #header .header_al{
+            width: 1200px; height: 70px;
+            /* overflow: hidden; */
+            margin: 0 auto;
+/*            border: 1px solid red;*/
+        }
+        #header .header_al .logo{
+            float: left;
+            height: 70px;
+            line-height: 70px;
+        }
+        #header .header_al .gnb{
+            margin-left: 150px;
+            font-weight: bold;
+            float: left;           
+        }
+        #header .header_al .gnb>li{
+            float: left;
+            height: 45px;
+            line-height: 45px;
+            margin-top: 20px;
+            margin-left:5px;
+            /* width:90px; */
+            padding: 0px 20px;
+            /* border: 1px solid salmon; */
+            position: relative;
+        }
+        #header .header_al .gnb>li:hover:before{
+            content: "";
+            display: block;
+            width: 0px; height: 0px;
+            /* background-color: red; */
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 10px solid rgb(38, 0, 255);
+            position: absolute;
+            left: 0px; top: 18px;
+        }
+        /* #header .header_al .gnb li:nth-child(4){
+            width:120px;
+        } */
+        #header .header_al .gnb>li a{
+            color: #434343;
+            /* display: block;
+            text-align: center; */
+        }
+        #header .header_al .gnb>li>a:hover{
+            color: #070f72;
+            /* border-left: 4px solid #070f71; */
+        }
+        #header .header_al .gnb_etc{
+            float: right;
+            font-weight: bold;
+        }
+        #header .header_al .gnb_etc .etc li{
+            float: left;
+            width: 60px; height: 70px;
+            margin-top: 30px;
+            text-align: right;
+        }
+        #header .header_al .gnb_etc .etc li a{
+            color: #434343;
+        } 
+        /* ------------------------------------ */
+        #header .header_al .gnb{
+            /* background-color: aqua; */
+            background-color: rgb(255, 255, 255);
+            height: 70px;
+            transition: all 0.5s;
+            overflow: hidden;
+            position: absolute;
+        }
+        #header .header_al .gnb:hover{
+            
+            height: 270px;
+        }
+        #header .header_al .gnb .sub{
+            display: none;
+        }
+        #header .header_al .gnb:hover .sub{
+            display: block;
+
+        }
+        /* ---------------------------------- */
+        #header .header_al .gnb>li .sub{
+            width: 110px;
+            font-size: 12px;
+            position: absolute;
+            left: 20px; top:45px;
+            /* background-color: white; */
+            /* border: 1px solid blue; */
+            padding-top: 10px;
+            line-height: 30px;
+        }
+        #header .header_al .gnb>li:hover .sub{
+            display: block;
+        }
+        #header .header_al .gnb .sub li:hover a{
+            color: wheat;
+        }
+
+        /* ---------------------------------- */
+        #section{
+            width: 100%;
+            height: 900px;
+            background-image: url(dl_bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #section .sec_title{
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            line-height: 70px;
+        }
+        #section .sec_title h1{
+            font-size: 50pt;
+        }
+        #section .main{
+            overflow: hidden;
+            width: 1150px;
+            margin: 0 auto;
+        }
+        #section .main li{
+            margin-top: 70px;
+            margin-bottom: 100px;
+            float: left;
+            width: 350px; height: 196px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-sizing: border-box;
+            color:white;
+            text-align: center;
+            margin-right: 25px;
+            padding-top: 150px;
+            border: 5px solid rgba(255, 255, 255, 0);
+        }
+        #section .main>li:hover{
+            border: 5px solid white;
+        }
+        #section .main li a{
+            color: white;
+            margin-top: 100px;
+        }
+        #section .main li:nth-child(1){           
+            background-image: url(dl_main1.jpg);            
+        }
+        #section .main li:nth-child(2){
+            background-image: url(dl_main2.jpg);
+        }
+        #section .main li:nth-child(3){
+            background-image: url(dl_main3.jpg);
+        }
+        #section .dl_title{
+            width: 1150px;
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+        }
+        #section .dl_title h3{
+            font-size: 12pt;
+            line-height: 20pt;
+        }
+        #section .dl_title p{
+            border: 1px solid white;
+            width: 200px; height: 50px;
+            text-align: center;
+            line-height: 50px;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.36);
+        }
+        #section .dl_channel{
+            overflow: hidden;
+            width: 1111px;
+            border-top: 1px solid white;
+            margin: 80px auto;
+        }       
+        #section .dl_channel>li{
+            width: 277px; height: 50px;
+            float: left;
+        }
+        #section .dl_channel>li:nth-child(1){
+            color:white;
+            font-size: 14pt;
+            margin-top: 20px;
+        }
+        #section .dl_channel>li:nth-child(1) span{
+            font-size:  1.5em;
+        }
+        #section .dl_channel>li a img{
+            float:left;
+            margin-top: 25px;
+        }
+        #section .dl_channel>li:nth-child(2) a img{
+            height: 42px;
+        }
+        #section .dl_channel div{
+            float:left;
+            color: white;
+            font-size: 14pt;
+            margin-top: 4px;
+            margin-left: 10px;
+            height: 50px;
+            margin-top: 30px;
+        }
+        #footer{
+            width: 100%; height: 70px;
+        }
+        #footer .dl_footer{
+            width: 1200px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        #footer .dl_footer li{
+            float: left;
+            margin-right: 50px;
+        }
+        #footer .dl_footer li a:hover{
+            text-decoration: underline;
+            color: black;
+        } 
+        #footer .dl_footer li:nth-child(5) a:hover{
+            text-decoration: underline;
+            color: navy;
+        }
+        #footer .dl_foote .con{
+            width: 120px;
+            text-align: center;
+        }
+        #footer address{
+            font-style: normal;
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="header_al clearFix">
+        <h1 class="logo">
+            <img src="dl_logo.png" alt="로고">
+        </h1>
+        <ul class="gnb">
+            <li><a href="#">회사소개</a>
+                <ul class="sub">
+                    <li><a href="#">회사연혁</a></li>
+                    <li><a href="#">CEO 인사말</a></li>
+                </ul>
+            </li>
+            <li><a href="#">사업소개</a>
+                <ul class="sub">
+                    <li><a href="#">사업개요</a></li>
+                    <li><a href="#">건축</a></li>
+                    <li><a href="#">토목</a></li>
+                </ul>
+            </li>
+            <li><a href="#">기술혁신</a>
+                <ul class="sub">
+                    <li><a href="#">기술개발원소개</a></li>
+                    <li><a href="#">주요연구분야</a></li>
+                    <li><a href="#">지식재산권</a></li>
+                </ul>
+            </li>
+            <li><a href="#">지속가능경영</a>
+                <ul class="sub">
+                    <li><a href="#">정도경영</a></li>
+                    <li><a href="#">상생경영</a></li>
+                    <li><a href="#">품질경영</a></li>
+                    <li><a href="#">안전보건경영</a></li>
+                    <li><a href="#">환경경영</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                </ul>
+            </li>
+            <li><a href="#">투자정보</a>
+                <ul class="sub">
+                    <li><a href="#">그룹하이라이트</a></li>
+                    <li><a href="#">자료실</a></li>
+                    <li><a href="#">재무정보</a></li>
+                    <li><a href="#">기업지배구조</a></li>
+                    <li><a href="#">ESG</a></li>
+                </ul>
+            </li>
+            <li><a href="#">홍보센터</a>
+                <ul class="sub">
+                    <li><a href="#">DL소식</a></li>
+                    <li><a href="#">홍보영상</a></li>
+                    <li><a href="#">CI/BI 소개</a></li>
+                </ul>
+            </li>
+            <li><a href="#">인재채용</a>
+                <ul class="sub">
+                    <li><a href="#">인재상</a></li>
+                    <li><a href="#">인사제도</a></li>
+                    <li><a href="#">채용정보</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="gnb_etc">
+            <ul class="etc">
+                <li><a href="#"><img src="dl_etc1.png" alt="돋보기"></a></li>
+                <li><a href="#">ENG</a></li>
+                <li><a href="#"><img src="dl_etc2.png" alt="햄버거메뉴"></a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div id="section">
+        <div class="sec_title">
+            <h1>INNOVARION</h1>
+            <p>기본을 지켜 혁신을 이루다</p>
+        </div>
+        <ul class="main">
+            <li><a href="#">Acro Seoul Forest</a></li>
+            <li><a href="#">1915 Canakkale Bridge</a></li>
+            <li><a href="#">Petrochemical Plant</a></li>
+        </ul>
+        <div class="dl_title">
+            <h3>대한민국 건설을 리드해온 DL이앤씨는<br>
+                    이제 종합설계시공(EPC) 뿐만 아니라 토탈솔루션 사업자로서 도약합니다.</h3>
+            <p>사업소개 바로가기</p>
+        </div>
+        <ul class="dl_channel">
+            <li>DL이앤씨 디지털 채널 &nbsp;&nbsp;&nbsp;<span>&gt;</span></li>
+            <li>
+                <a href="#">
+                    <img src="dl_ic1.png" alt="유튜브">
+                    <div class="youtube">유튜브</div>
+                </a>
+            </li>
+            <li><a href="#"><img src="dl_ic2.png" alt="블로그">
+            <div class="blog">네이버블로그</div></a></li>
+            <li><a href="#"><img src="dl_ic3.png" alt="링크드인">
+            <div class="linkedin">링크드인</div></a></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <ul class="dl_footer">
+            <li class="con"><a href="#">전자공고</a></li>
+            <li class="bar">|</li>
+            <li class="con"><a href="#">원가절감제안</a></li>
+            <li class="bar">|</li>
+            <li class="con"><h4><a href="#">개인정보처리방침</a></h4></li>
+            <li class="bar">|</li>
+            <li class="con"><a href="#">영상정보처리기기운영관리방침</a></li>
+            <li class="bar">|</li>
+            <li class="con"><a href="#">이메일무단수집거부</a></li>
+        </ul>
+        <address>서울 종로구 통일로 134 D타워 돈의문 COPYRIGHT (c) 2021 DL이앤씨 All RIGHTS RESERVED.</address>
+    </div>
+</body>
+</html>
